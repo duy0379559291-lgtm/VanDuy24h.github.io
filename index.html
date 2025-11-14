@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <!-- dùng header chung -->
+
     <div class="top-bar">
         <div>524107248</div>
         <div>
@@ -16,7 +16,7 @@
             <a href="#">YouTube</a>
         </div>
     </div>
-<!-- THANH ICON MẠNG XÃ HỘI -->
+
 
 
     <div class="social-icons">
@@ -46,14 +46,14 @@
         </nav>
 
             <div class="header-right">
-        <!-- KHU VỰC KHÁCH CHƯA ĐĂNG NHẬP -->
+    
         <div id="guestArea">
             <a href="dangnhap.html">Đăng nhập</a> |
             <a href="dangky.html">Đăng ký</a>
             <span class="search-icon"><i class="fas fa-search"></i></span>
         </div>
 
-        <!-- KHU VỰC ĐÃ ĐĂNG NHẬP (MẶC ĐỊNH ẨN) -->
+      
         <div id="userArea" class="user-area" style="display:none;">
             <div class="user-pill" id="userPill">
                 <div class="user-avatar">
@@ -65,7 +65,7 @@
                 </div>
             </div>
 
-            <!-- MENU NHỎ KHI BẤM VÀO LOGO -->
+       
             <div class="user-menu" id="userMenu">
                 <div class="user-menu-item" id="btnUserInfo">Thông tin khách hàng</div>
                 <div class="user-menu-item" id="btnLogout">Đăng xuất</div>
@@ -74,7 +74,7 @@
     </div>
 </header>
 
-    <!-- HERO -->
+   
     <section class="hero">
         <div class="hero-inner">
             <h1 class="hero-title">Văn Duy</h1>
@@ -86,7 +86,7 @@
         </div>
     </section>
 
-    <!-- CATEGORY BAR -->
+    
     <div class="category-bar">
         <div class="category-item active">
             <span class="icon">&#128188;</span>
@@ -149,7 +149,7 @@
         </div>
     </section>
 
-    <!-- SECTION TIN TỨC -->
+  
     <section class="section">
         <h2>Tin tức thị trường</h2>
         <p>Cập nhật nhanh xu hướng, chính sách và phân tích chuyên sâu từ các chuyên gia.</p>
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnLogout  = document.getElementById("btnLogout");
     const btnUserInfo = document.getElementById("btnUserInfo");
 
-    // Lấy thông tin khách hàng đã lưu sau khi login
+   
     let customerRaw = localStorage.getItem("lvdCustomer");
     if (customerRaw) {
         try {
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const fullName = customer.name || "Khách hàng";
             const shortName = fullName.split(" ")[fullName.split(" ").length - 1];
 
-            // Ẩn khu guest, hiện logo nhỏ
+      
             if (guestArea) guestArea.style.display = "none";
             if (userArea)  userArea.style.display  = "flex";
             if (userNameEl) userNameEl.textContent = shortName;
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Toggle menu khi click vào pill
+  
     if (userPill && userMenu) {
         userPill.addEventListener("click", function () {
             if (userMenu.style.display === "block") {
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // Click ra ngoài đóng menu
+ 
         document.addEventListener("click", function (e) {
             if (!userArea.contains(e.target)) {
                 userMenu.style.display = "none";
@@ -208,7 +208,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Xem thông tin khách hàng (demo: chỉ alert)
     if (btnUserInfo) {
         btnUserInfo.addEventListener("click", function () {
             const data = localStorage.getItem("lvdCustomer");
@@ -226,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Đăng xuất
+
     if (btnLogout) {
         btnLogout.addEventListener("click", function () {
             localStorage.removeItem("lvdCustomer");
@@ -240,3 +239,4 @@ document.addEventListener("DOMContentLoaded", function () {
 </body>
 
 </html>
+
